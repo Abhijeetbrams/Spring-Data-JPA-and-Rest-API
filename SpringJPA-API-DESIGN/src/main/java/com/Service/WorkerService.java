@@ -14,5 +14,9 @@ public interface WorkerService {
 //	
 	public void deleteById(int theId);
 	
+	public List<Object> findMaxSalByDepartment();
+	
+	 public List<Worker> findByFirstName(String firstName);
+	
 	//public void saveOrUpdate(Department theDepartment);
 }

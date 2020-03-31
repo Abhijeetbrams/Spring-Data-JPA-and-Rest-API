@@ -55,6 +55,16 @@ public class WorkerServiceImpl implements WorkerService{
 	public void deleteById(int theId) {
 		workerRepo.deleteById(theId);
 	}
+
+	@Override
+	public List<Object> findMaxSalByDepartment() {
+		return workerRepo.findMaxSalByDepartment();
+	}
+
+	@Override
+	public List<Worker> findByFirstName(String firstName) {
+		return workerRepo.findByFirstName(firstName);
+	}
 	
    
 }

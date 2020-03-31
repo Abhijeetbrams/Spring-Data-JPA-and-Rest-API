@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -46,6 +47,7 @@ public class Worker {
 	@JsonManagedReference
 	@OneToMany(mappedBy="worker",fetch=FetchType.LAZY,
 			cascade= CascadeType.ALL,orphanRemoval = true)
+	@OrderBy(value="amount desc")
 	private List<Bonus> bonuses;
 
 	public Worker(String fname, String lname, int salary, Date jdate, String department) {
